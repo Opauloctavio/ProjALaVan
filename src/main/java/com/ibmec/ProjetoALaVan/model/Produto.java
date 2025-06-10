@@ -22,9 +22,13 @@ public class Produto {
     @Column(name="IMAGEM")
     private String imagem;
 
+    @Column(name="PRECO")
+    private String preco;
+
     @ManyToOne
     @JoinColumn(name="CATEGORIA_ID")
     private Categoria categoria;
+
 
     public UUID getId() {
         return id;
@@ -64,5 +68,14 @@ public class Produto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+
+    public String getPreco() {
+        return preco;
+    }
+
+    public void setPreco(String preco) {
+        this.preco = preco;
     }
 }

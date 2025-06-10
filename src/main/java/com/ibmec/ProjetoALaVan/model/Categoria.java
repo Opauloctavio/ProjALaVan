@@ -8,7 +8,6 @@ import java.util.UUID;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     @Basic(optional = false)
     @Column(name="ID_CATEGORIA")
     private UUID id;
@@ -18,9 +17,6 @@ public class Categoria {
 
     @Column(name="DESCRICAO")
     private String descricao;
-
-    @Column(name="TEXTODESCRITIVO")
-    private String textoDescricao;
 
 
     public UUID getId() {
@@ -46,11 +42,4 @@ public class Categoria {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public String getTextoDescricao() {
-        return textoDescricao;
-    }
-    public void setTextoDescricao(String textoDescricao) {
-        this.textoDescricao = textoDescricao;
-    }
-
 }
