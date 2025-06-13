@@ -65,7 +65,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: url("images/modelos.png");
+    background: url("images/modelos.png") no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -90,7 +90,7 @@ body {
     z-index: 2;
 }
 .about-section {
-    background: url("images/outrasModelos.png") ;
+    background: url("images/outrasModelos.png") no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -148,12 +148,13 @@ body {
 /* Products Section */
 .products-section {
     background: #000000 ;
-    background-size: cover;
+    background-size: contain;
     min-height: 50vh;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 1;
+}
 }
 
 .products-section::before {
