@@ -65,7 +65,7 @@ body {
 
 /* Hero Section - Responsiva */
 .hero-section {
-    background: url("images/modelos.png") no-repeat center center;
+    background: url("images/maisModelos.jpeg") no-repeat center center;
     background-size: cover;
     background-attachment: scroll; /* Mudança para melhor responsividade */
     min-height: 100vh;
@@ -168,9 +168,10 @@ body {
 
 /* Products Section */
 .products-section {
-    background: #000000;
-    background-size: contain;
-    min-height: 50vh;
+    background: url("images/modelos.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; /* Mudança para melhor responsividade */
+    min-height: 60vh; /* Altura reduzida para mobile */
     display: flex;
     align-items: center;
     position: relative;
