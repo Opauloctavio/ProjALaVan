@@ -29,11 +29,12 @@ public class ProdutoRestController {
         return produtoRepository.findAll();
     }
     @GetMapping("/categoria/{id}")
-    public List<Produto> listarCategorias(@PathVariable UUID id) {
-        return produtoRepository.findByCategoriaId(id);
+    public List<Produto> listarProdutosPorCategoria(@PathVariable UUID id) {
+        return produtoRepository.findByCategoria_Id(id);
     }
     @GetMapping("/categoria/{id}/info")
     public ResponseEntity<Categoria> buscarCategoriaPorId(@PathVariable UUID id) {
         return categoriaRepository.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
+
 }

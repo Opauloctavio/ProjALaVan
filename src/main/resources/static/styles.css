@@ -63,10 +63,11 @@ body {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Hero Section */
+/* Hero Section - Responsiva */
 .hero-section {
-    background: url("images/modelos.png") no-repeat center center fixed;
+    background: url("images/modelos.png") no-repeat center center;
     background-size: cover;
+    background-attachment: scroll; /* Mudança para melhor responsividade */
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -81,7 +82,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* escurece a imagem para melhorar o contraste */
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -89,15 +90,35 @@ body {
     position: relative;
     z-index: 2;
 }
+
+/* About Section - Responsiva */
 .about-section {
-    background: url("images/outrasModelos.png") no-repeat center center fixed;
+    background: url("images/outrasModelos.png") no-repeat center center;
     background-size: cover;
-    min-height: 100vh;
+    background-attachment: scroll; /* Mudança para melhor responsividade */
+    min-height: 60vh; /* Altura reduzida para mobile */
     display: flex;
     align-items: center;
     position: relative;
     z-index: 1;
 }
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.about-section .container {
+    position: relative;
+    z-index: 2;
+}
+
 .cta-section {
     position: relative;
     overflow: hidden;
@@ -147,7 +168,7 @@ body {
 
 /* Products Section */
 .products-section {
-    background: #000000 ;
+    background: #000000;
     background-size: contain;
     min-height: 50vh;
     display: flex;
@@ -155,13 +176,12 @@ body {
     position: relative;
     z-index: 1;
 }
-}
 
 .products-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* escurece o fundo para melhor contraste */
+    background: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
 
@@ -174,18 +194,18 @@ body {
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: black; /* fundo do círculo preto */
+    background: black;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     font-size: 2rem;
-    color: white; /* cor do ícone branco */
+    color: white;
 }
 
 .feature-icon i {
-    color: white; /* garante que todos os ícones fiquem brancos */
+    color: white;
 }
 
 /* Product Carousel */
@@ -271,8 +291,9 @@ body {
 .quality-stat {
     padding: 30px 20px;
 }
+
 .impact-section {
-    background: #000; /* fundo preto */
+    background: #000;
     position: relative;
     overflow: hidden;
 }
@@ -284,7 +305,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0); /* remove o overlay esmaecido */
+    background: rgba(0, 0, 0, 0);
     z-index: 1;
 }
 
@@ -313,6 +334,13 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Hero Section Mobile */
+    .hero-section {
+        min-height: 80vh; /* Altura reduzida para mobile */
+        background-position: center center;
+        background-size: cover;
+    }
+
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -321,6 +349,13 @@ footer {
         display: block;
         width: 100%;
         margin-bottom: 15px;
+    }
+
+    /* About Section Mobile */
+    .about-section {
+        min-height: 50vh; /* Altura ainda menor para mobile */
+        background-position: center center;
+        background-size: cover;
     }
 
     .card {
@@ -348,13 +383,62 @@ footer {
 }
 
 @media (max-width: 480px) {
+    /* Ajustes específicos para telas muito pequenas */
+    .hero-section {
+        min-height: 70vh;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .about-section {
+        min-height: 40vh;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
     /* Logo ainda menor para telas muito pequenas */
     .leaf-icon img {
         max-height: 35px;
     }
-    
+
     .navbar-brand {
         font-size: 1.2rem;
+    }
+}
+
+/* Ajustes para dispositivos com orientação paisagem (landscape) */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        background-attachment: scroll;
+    }
+
+    .about-section {
+        min-height: 70vh;
+        background-attachment: scroll;
+    }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-section {
+        background-attachment: scroll; /* Melhor performance em tablets */
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .about-section {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
     }
 }
 
@@ -362,6 +446,15 @@ footer {
     /* Logo um pouco maior para telas grandes */
     .leaf-icon img {
         max-height: 70px;
+    }
+
+    /* Volta o background-attachment: fixed para telas grandes onde funciona melhor */
+    .hero-section {
+        background-attachment: fixed;
+    }
+
+    .about-section {
+        background-attachment: fixed;
     }
 }
 
@@ -384,4 +477,24 @@ html {
 
 .carousel-item.active .card {
     animation: fadeInUp 0.6s ease-out;
+}
+
+/* Otimização para dispositivos com DPR alto (retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-section,
+    .about-section {
+        background-attachment: scroll; /* Melhor performance em telas retina */
+    }
+}
+
+/* Ajustes para acessibilidade - reduzir movimento para usuários sensíveis */
+@media (prefers-reduced-motion: reduce) {
+    .hero-section,
+    .about-section {
+        background-attachment: scroll;
+    }
+
+    .carousel-item.active .card {
+        animation: none;
+    }
 }

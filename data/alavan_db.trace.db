@@ -1,0 +1,3 @@
+2025-06-13 21:54:54.417848-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUTO" not found; SQL statement:
+SELECT * FROM produto WHERE CATEGORIA_ID = 'ea386274-b8e4-43cf-a0ae-cb521b597f74' [42102-232]

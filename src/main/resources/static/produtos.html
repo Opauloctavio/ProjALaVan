@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -32,9 +32,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownProdutos">
                         <li><a class="dropdown-item categoria-item" href="produtos.html" data-categoria="todos">Todas as Categorias</a></li>
-                        <li><a class="dropdown-item categoria-item" href="produtos.html?categoria=3cb63f1f-a48a-4cd0-bc3c-fc6ea76c847e" data-categoria="3cb63f1f-a48a-4cd0-bc3c-fc6ea76c847e">Head Pieces</a></li>
-                        <li><a class="dropdown-item categoria-item" href="produtos.html?categoria=blusas" data-categoria="blusas">Vestuários</a></li>
-                        <li><a class="dropdown-item categoria-item" href="produtos.html?categoria=calcas" data-categoria="calcas">Bolsas</a></li>
+                        <li><a class="dropdown-item categoria-item" href="produtos.html?categoria=87e225d7-fe93-4d2c-bd6a-f68fc029fbd7" data-categoria="87e225d7-fe93-4d2c-bd6a-f68fc029fbd7">Head Pieces</a></li>
+                        <li><a class="dropdown-item categoria-item" href="produtos.html?categoria=2f63530d-1620-4756-8a71-6b8169c61292" data-categoria="2f63530d-1620-4756-8a71-6b8169c61292">Vestuários</a></li>
+                        <li><a class="dropdown-item categoria-item" href="produtos.html?categoria=575d8791-8490-4149-9ea0-ccfdd9395279" data-categoria="575d8791-8490-4149-9ea0-ccfdd9395279">Bolsas</a></li>
                         <li><a class="dropdown-item categoria-item" href="produtos.html?categoria=ea386274-b8e4-43cf-a0ae-cb521b597f74" data-categoria="ea386274-b8e4-43cf-a0ae-cb521b597f74">Acessórios</a></li>
                     </ul>
                 </li>
@@ -119,8 +119,8 @@
             </div>
             <div class="col-md-6 text-md-end">
                 <div class="social-links">
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/a.la.van" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5511941498950" class="text-white"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 <p class="text-muted mt-3">&copy; 2024 À La Van. Todos os direitos reservados.</p>
             </div>
@@ -170,7 +170,7 @@
                 carouselInner.innerHTML = ''; // Limpa o carrossel antes de adicionar novos itens
 
                 if (!produtos || produtos.length === 0) {
-                    carouselInner.innerHTML = '<p class="text-center">Nenhum produto encontrado para esta categoria.</p>';
+                    carouselInner.innerHTML = '<p class="text-center">Em breve novos produtos.</p>';
                     document.getElementById('productCount').textContent = '0';
                     return;
                 }
@@ -242,5 +242,6 @@
     });
 
 </script>
+
 </body>
 </html>
