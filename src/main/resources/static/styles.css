@@ -67,8 +67,8 @@ body {
 .hero-section {
     background: url("images/maisModelos.jpeg") no-repeat center center;
     background-size: cover;
-    background-attachment: scroll; /* Mudança para melhor responsividade */
-    min-height: 100vh;
+    background-attachment: scroll;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -95,8 +95,8 @@ body {
 .about-section {
     background: url("images/outrasModelos.png") no-repeat center center;
     background-size: cover;
-    background-attachment: scroll; /* Mudança para melhor responsividade */
-    min-height: 60vh; /* Altura reduzida para mobile */
+    background-attachment: scroll;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -115,6 +115,31 @@ body {
 }
 
 .about-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Products Section - Responsiva */
+.products-section {
+    background: url("images/modelos.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.products-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.products-section .container {
     position: relative;
     z-index: 2;
 }
@@ -166,31 +191,6 @@ body {
     border-color: white;
 }
 
-/* Products Section */
-.products-section {
-    background: url("images/modelos.png") no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll; /* Mudança para melhor responsividade */
-    min-height: 60vh; /* Altura reduzida para mobile */
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-.products-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-.products-section .container {
-    position: relative;
-    z-index: 2;
-}
-
 /* Feature Icons */
 .feature-icon {
     width: 80px;
@@ -206,6 +206,24 @@ body {
 }
 
 .feature-icon i {
+    color: white;
+}
+
+/* Values Section Icons */
+.value-icon {
+    width: 80px;
+    height: 80px;
+    background: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: white;
+}
+
+.value-icon i {
     color: white;
 }
 
@@ -337,9 +355,10 @@ footer {
 @media (max-width: 768px) {
     /* Hero Section Mobile */
     .hero-section {
-        min-height: 80vh; /* Altura reduzida para mobile */
-        background-position: center center;
+        min-height: 80vh;
+        background-position: center top; /* Ajuste para priorizar a parte superior da imagem */
         background-size: cover;
+        background-attachment: scroll;
     }
 
     .hero-section h1 {
@@ -354,9 +373,18 @@ footer {
 
     /* About Section Mobile */
     .about-section {
-        min-height: 50vh; /* Altura ainda menor para mobile */
+        min-height: 50vh;
         background-position: center center;
         background-size: cover;
+        background-attachment: scroll;
+    }
+
+    /* Products Section Mobile */
+    .products-section {
+        min-height: 50vh;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: scroll;
     }
 
     .card {
@@ -387,14 +415,23 @@ footer {
     /* Ajustes específicos para telas muito pequenas */
     .hero-section {
         min-height: 70vh;
-        background-position: center center;
+        background-position: center top; /* Ajuste para priorizar a parte superior da imagem */
         background-size: cover;
+        background-attachment: scroll;
     }
 
     .about-section {
+        min-height: 70vh;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: scroll;
+    }
+
+    .products-section {
         min-height: 40vh;
         background-position: center center;
         background-size: cover;
+        background-attachment: scroll;
     }
 
     .hero-section h1 {
@@ -418,25 +455,42 @@ footer {
 /* Ajustes para dispositivos com orientação paisagem (landscape) */
 @media (max-width: 768px) and (orientation: landscape) {
     .hero-section {
-        min-height: 100vh;
+        min-height: 70vh;
         background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
     }
 
     .about-section {
         min-height: 70vh;
         background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .products-section {
+        min-height: 70vh;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
     }
 }
 
 /* Ajustes para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
     .hero-section {
-        background-attachment: scroll; /* Melhor performance em tablets */
+        background-attachment: scroll;
         background-position: center center;
         background-size: cover;
     }
 
     .about-section {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .products-section {
         background-attachment: scroll;
         background-position: center center;
         background-size: cover;
@@ -452,10 +506,20 @@ footer {
     /* Volta o background-attachment: fixed para telas grandes onde funciona melhor */
     .hero-section {
         background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
     }
 
     .about-section {
         background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .products-section {
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
     }
 }
 
@@ -483,16 +547,22 @@ html {
 /* Otimização para dispositivos com DPR alto (retina) */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .hero-section,
-    .about-section {
-        background-attachment: scroll; /* Melhor performance em telas retina */
+    .about-section,
+    .products-section {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
     }
 }
 
 /* Ajustes para acessibilidade - reduzir movimento para usuários sensíveis */
 @media (prefers-reduced-motion: reduce) {
     .hero-section,
-    .about-section {
+    .about-section,
+    .products-section {
         background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
     }
 
     .carousel-item.active .card {
