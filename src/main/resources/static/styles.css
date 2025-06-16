@@ -355,8 +355,8 @@ footer {
 @media (max-width: 768px) {
     /* Hero Section Mobile */
     .hero-section {
-        min-height: 80vh;
-        background-position: center top; /* Ajuste para priorizar a parte superior da imagem */
+        min-height: 50vh; /* Ajustado para ser similar ao about-section */
+        background-position: center 20%; /* Ajuste para tentar focar mais na parte superior da imagem */
         background-size: cover;
         background-attachment: scroll;
     }
@@ -414,8 +414,8 @@ footer {
 @media (max-width: 480px) {
     /* Ajustes específicos para telas muito pequenas */
     .hero-section {
-        min-height: 70vh;
-        background-position: center top; /* Ajuste para priorizar a parte superior da imagem */
+        min-height: 70vh; /* Mantido para telas muito pequenas, mas com background-position ajustado */
+        background-position: center 20%; /* Ajuste para tentar focar mais na parte superior da imagem */
         background-size: cover;
         background-attachment: scroll;
     }
